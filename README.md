@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:1a3a6e,100:0d2137&height=220&section=header&text=Job%20Listing%20Portal&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=Full-Stack%20MERN%20Platform%20%E2%80%94%20Connecting%20Job%20Seekers%20with%20Recruiters&descAlignY=58&descSize=18&animation=fadeIn)
  
 <div align="center">
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=60A5FA&center=true&vCenter=true&width=650&lines=JWT+Secured+%F0%9F%94%90;Role-Based+Access+Control+%F0%9F%8E%AD;Resume+%26+Profile+Upload+%F0%9F%93%84;Real-Time+Application+Tracking+%F0%9F%93%8B;Mobile+Responsive+%2B+Dark+Mode+%F0%9F%8C™)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=60A5FA&center=true&vCenter=true&width=650&lines=JWT+Secured+%F0%9F%94%90;Role-Based+Access+Control+%F0%9F%8E%AD;Resume+%26+Profile+Upload+%F0%9F%93%84;Real-Time+Application+Tracking+%F0%9F%93%8B;Mobile+Responsive+%2B+Dark+Mode+%F0%9F%8C%99)](https://git.io/typing-svg)
  
 <br/>
 ![Node.js](https://img.shields.io/badge/Node.js-v16%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -793,3 +793,4 @@ Distributed under the **ISC License**. See [`LICENSE`](LICENSE) for full terms.
 **⭐ Star this repo if it helped you — it means a lot! ⭐**
  
 </div>
+ 
