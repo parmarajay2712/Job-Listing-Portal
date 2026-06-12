@@ -125,18 +125,36 @@ export const getJobById = async (req, res) => {
 export const getAdminJobs = async (req, res) => {
     try {
         const adminId = req.id;
-        const jobs = await Job.find({ created_by: adminId }).populate({
-            path:'company',
-            createdAt:-1
-        });
+        const jobs = await Job.find({ created_by: adminId })
+            .populate({ path: 'company' })
+            .populate({
+                path: 'applications',
+                populate: {
+                    path: 'applicant',
+                    model: 'User',
+                    select: 'role'
+                }
+            })
+            .sort({ createdAt: -1 });
+
         if (!jobs) {
             return res.status(404).json({
                 message: "Jobs not found.",
                 success: false
             })
         };
+
+        // For each job, filter out recruiter/null applicant entries from count
+        const jobsWithCleanCounts = jobs.map(job => {
+            const jobObj = job.toObject();
+            jobObj.applications = (jobObj.applications || []).filter(app =>
+                app.applicant && app.applicant.role === 'student'
+            );
+            return jobObj;
+        });
+
         return res.status(200).json({
-            jobs,
+            jobs: jobsWithCleanCounts,
             success: true
         })
     } catch (error) {

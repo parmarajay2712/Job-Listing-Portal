@@ -5,6 +5,15 @@ export const applyJob = async (req, res) => {
     try {
         const userId = req.id;
         const jobId = req.params.id;
+
+        // Block recruiters from applying to jobs
+        if (req.role === 'recruiter') {
+            return res.status(403).json({
+                message: "Recruiters cannot apply to jobs.",
+                success: false
+            });
+        }
+
         if (!jobId) {
             return res.status(400).json({
                 message: "Job id is required.",
@@ -82,22 +91,52 @@ export const getAppliedJobs = async (req,res) => {
 export const getApplicants = async (req,res) => {
     try {
         const jobId = req.params.id;
-        const job = await Job.findById(jobId).populate({
-            path:'applications',
-            options:{sort:{createdAt:-1}},
-            populate:{
-                path:'applicant'
-            }
-        });
+
+        // First verify job exists
+        const job = await Job.findById(jobId).select('_id title applications');
         if(!job){
             return res.status(404).json({
                 message:'Job not found.',
                 success:false
             })
         };
+
+        // Fetch applications with applicant populated (include role for filtering)
+        const applications = await Application.find({ job: jobId })
+            .sort({ createdAt: -1 })
+            .populate({
+                path: 'applicant',
+                model: 'User',
+                select: 'fullname email phoneNumber profile role createdAt'
+            });
+
+        // Separate valid student applications from invalid ones
+        const validApplications = [];
+        const invalidIds = [];
+
+        for (const app of applications) {
+            if (!app.applicant) {
+                // Applicant user was deleted — mark for cleanup
+                invalidIds.push(app._id);
+            } else if (app.applicant.role === 'recruiter') {
+                // Recruiter accidentally applied — remove this entry
+                invalidIds.push(app._id);
+            } else {
+                validApplications.push(app);
+            }
+        }
+
+        // Clean up invalid applications from DB and remove from job's array
+        if (invalidIds.length > 0) {
+            await Application.deleteMany({ _id: { $in: invalidIds } });
+            await Job.findByIdAndUpdate(jobId, {
+                $pull: { applications: { $in: invalidIds } }
+            });
+        }
+
         return res.status(200).json({
-            job, 
-            succees:true
+            job: { ...job.toObject(), applications: validApplications },
+            success: true
         });
     } catch (error) {
         console.error('Get applicants error:', error);

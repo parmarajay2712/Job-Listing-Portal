@@ -47,10 +47,14 @@ const AdminJobsTable = () => {
         </TableHeader>
         <TableBody>
           {filterJobs?.map((job) => (
-            <tr>
+            <tr key={job._id}>
               <TableCell>{job?.company?.name}</TableCell>
               <TableCell>{job?.title}</TableCell>
-              <TableCell>{job?.createdAt.split("T")[0]}</TableCell>
+              <TableCell>
+                {job?.createdAt
+                  ? new Date(job.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })
+                  : "—"}
+              </TableCell>
               <TableCell className="text-right cursor-pointer">
                 <Popover>
                   <PopoverTrigger>

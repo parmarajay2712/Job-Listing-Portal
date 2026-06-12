@@ -53,39 +53,47 @@
 ## 🖼️ Screenshots
 
 <div align="center">
-
-**Home Page — Hero & Featured Jobs**
-
-![Home Page](https://placehold.co/900x500/0f172a/60a5fa?text=Home+Page+-+Hero+%26+Featured+Jobs)
-
-<br/>
-
-**Login & Signup Pages**
-
-![Login Page](https://placehold.co/900x500/0f172a/60a5fa?text=Login+%26+Signup+Pages)
-
-<br/>
-
-**Job Browse — Filters & Search**
-
-![Job Browse](https://placehold.co/900x500/0f172a/60a5fa?text=Job+Browse+-+Filters+%26+Search)
-
-<br/>
-
-**Job Details & Apply**
-
-![Job Details](https://placehold.co/900x500/0f172a/60a5fa?text=Job+Details+%26+Apply)
-
-<br/>
-
-| Student Profile | Recruiter Dashboard |
-|:-:|:-:|
-| ![Student Profile](https://placehold.co/440x300/0f172a/60a5fa?text=Student+Profile+Page) | ![Recruiter Dashboard](https://placehold.co/440x300/0f172a/60a5fa?text=Recruiter+Dashboard) |
-| Applicants Management | Mobile View |
-| ![Applicants](https://placehold.co/440x300/0f172a/60a5fa?text=Applicants+Management) | ![Mobile](https://placehold.co/440x300/0f172a/60a5fa?text=Mobile+Responsive+View) |
-
-> 📸 Replace these with real screenshots by saving images to an `images/` folder in your repo and swapping the URLs with `./images/your-file.png`
-
+### 🏠 Home Page — Hero & Featured Jobs
+<img src="https://placehold.co/900x500/0f172a/60a5fa?text=🏠+Home+Page+—+Hero+%26+Featured+Jobs&font=roboto" width="100%" alt="Home Page"/>
+<br/><br/>
+ 
+### 🔐 Login & Signup Pages
+<img src="https://placehold.co/900x500/0f172a/60a5fa?text=🔐+Login+%26+Signup+Pages&font=roboto" width="100%" alt="Login Page"/>
+<br/><br/>
+ 
+### 💼 Job Browse — Filters & Search
+<img src="https://placehold.co/900x500/0f172a/60a5fa?text=💼+Job+Browse+—+Filters+%26+Search&font=roboto" width="100%" alt="Job Browse"/>
+<br/><br/>
+ 
+### 📋 Job Details & Apply
+<img src="https://placehold.co/900x500/0f172a/60a5fa?text=📋+Job+Details+%26+Apply+Button&font=roboto" width="100%" alt="Job Details"/>
+<br/><br/>
+ 
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <strong>👤 Student Profile & Resume Upload</strong><br/><br/>
+      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=👤+Student+Profile+Page&font=roboto" width="100%" alt="Student Profile"/>
+    </td>
+    <td width="50%" align="center">
+      <strong>🏢 Recruiter Dashboard</strong><br/><br/>
+      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=🏢+Recruiter+Dashboard&font=roboto" width="100%" alt="Recruiter Dashboard"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <br/><strong>📊 Applicants Management</strong><br/><br/>
+      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=📊+Applicants+Management+Table&font=roboto" width="100%" alt="Applicants Table"/>
+    </td>
+    <td width="50%" align="center">
+      <br/><strong>📱 Mobile Responsive View</strong><br/><br/>
+      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=📱+Mobile+Responsive+View&font=roboto" width="100%" alt="Mobile View"/>
+    </td>
+  </tr>
+</table>
+> 📸 **Replace these placeholders** with real screenshots once your app is running.
+> Take screenshots → save to an `images/` folder in your repo → swap each URL with `./images/your-screenshot.png`
+ 
 </div>
 
 ---

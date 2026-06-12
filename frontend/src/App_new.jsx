@@ -15,6 +15,7 @@ import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
+import RecruiterDashboard from './components/admin/RecruiterDashboard'
 
 // Layout component for public pages with Navbar and Footer
 const MainLayout = ({ children }) => (
@@ -88,6 +89,17 @@ const appRouter = createBrowserRouter([
   {
     path: "/profile",
     element: <MainLayout><Profile /></MainLayout>,
+  },
+  // Recruiter dashboard route
+  {
+    path: "/recruiter/dashboard",
+    element: (
+      <AdminLayout>
+        <ProtectedRoute>
+          <RecruiterDashboard />
+        </ProtectedRoute>
+      </AdminLayout>
+    ),
   },
   // Admin routes with proper nesting
   {

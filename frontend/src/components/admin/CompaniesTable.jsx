@@ -35,14 +35,18 @@ const CompaniesTable = () => {
                 <TableBody>
                     {
                         filterCompany?.map((company) => (
-                            <tr>
+                            <tr key={company._id}>
                                 <TableCell>
                                     <Avatar>
                                         <AvatarImage src={company.logo}/>
                                     </Avatar>
                                 </TableCell>
                                 <TableCell>{company.name}</TableCell>
-                                <TableCell>{company.createdAt.split("T")[0]}</TableCell>
+                                <TableCell>
+                                    {company?.createdAt
+                                        ? new Date(company.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })
+                                        : "—"}
+                                </TableCell>
                                 <TableCell className="text-right cursor-pointer">
                                     <Popover>
                                         <PopoverTrigger><MoreHorizontal /></PopoverTrigger>
