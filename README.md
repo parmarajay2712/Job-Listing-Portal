@@ -54,7 +54,7 @@
 
 <div align="center">
 ### 🏠 Home Page — Hero & Featured Jobs
-<img src="https://placehold.co/900x500/0f172a/60a5fa?text=🏠+Home+Page+—+Hero+%26+Featured+Jobs&font=roboto" width="100%" alt="Home Page"/>
+<img src="Imagesss\home page.png" alt="Home Page"/>
 <br/><br/>
  
 ### 🔐 Login & Signup Pages
