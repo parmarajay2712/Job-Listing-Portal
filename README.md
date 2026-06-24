@@ -54,40 +54,40 @@
 
 <div align="center">
 ### 🏠 Home Page — Hero & Featured Jobs
-<img src="https://placehold.co/900x500/0f172a/60a5fa?text=🏠+Home+Page+—+Hero+%26+Featured+Jobs&font=roboto" width="100%" alt="Home Page"/>
+<img src="Imagesss\home page.png" alt="Home Page"/>
 <br/><br/>
  
 ### 🔐 Login & Signup Pages
-<img src="https://placehold.co/900x500/0f172a/60a5fa?text=🔐+Login+%26+Signup+Pages&font=roboto" width="100%" alt="Login Page"/>
+<img src="Imagesss\login.png" width="100%" alt="Login Page"/>
 <br/><br/>
  
 ### 💼 Job Browse — Filters & Search
-<img src="https://placehold.co/900x500/0f172a/60a5fa?text=💼+Job+Browse+—+Filters+%26+Search&font=roboto" width="100%" alt="Job Browse"/>
+<img src="Imagesss\jobs.png" width="100%" alt="Job Browse"/>
 <br/><br/>
  
 ### 📋 Job Details & Apply
-<img src="https://placehold.co/900x500/0f172a/60a5fa?text=📋+Job+Details+%26+Apply+Button&font=roboto" width="100%" alt="Job Details"/>
+<img src="Imagesss\job detalish.png" width="100%" alt="Job Details"/>
 <br/><br/>
  
 <table>
   <tr>
     <td width="50%" align="center">
       <strong>👤 Student Profile & Resume Upload</strong><br/><br/>
-      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=👤+Student+Profile+Page&font=roboto" width="100%" alt="Student Profile"/>
+      <img src="Imagesss\student profileee.png" width="100%" alt="Student Profile"/>
     </td>
     <td width="50%" align="center">
       <strong>🏢 Recruiter Dashboard</strong><br/><br/>
-      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=🏢+Recruiter+Dashboard&font=roboto" width="100%" alt="Recruiter Dashboard"/>
+      <img src="Imagesss\Recruiter Dashboard.png" width="100%" alt="Recruiter Dashboard"/>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <br/><strong>📊 Applicants Management</strong><br/><br/>
-      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=📊+Applicants+Management+Table&font=roboto" width="100%" alt="Applicants Table"/>
+      <img src="Imagesss\Applicants Management (1).png" width="100%" alt="Applicants Table"/>
     </td>
     <td width="50%" align="center">
       <br/><strong>📱 Mobile Responsive View</strong><br/><br/>
-      <img src="https://placehold.co/440x320/0f172a/60a5fa?text=📱+Mobile+Responsive+View&font=roboto" width="100%" alt="Mobile View"/>
+      <img src="Imagesss\home page.png" width="100%" alt="Mobile View"/>
     </td>
   </tr>
 </table>
