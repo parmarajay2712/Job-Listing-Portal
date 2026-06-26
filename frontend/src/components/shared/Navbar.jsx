@@ -1,7 +1,7 @@
 import React from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
-import { Avatar, AvatarImage } from "../ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { LogOut, User2, BarChart3 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,16 @@ const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // Get user initials for avatar fallback
+  const getUserInitials = () => {
+    if (!user?.fullname) return "U";
+    const names = user.fullname.trim().split(" ");
+    if (names.length >= 2) {
+      return (names[0][0] + names[names.length - 1][0]).toUpperCase();
+    }
+    return names[0][0].toUpperCase();
+  };
 
   const logoutHandler = async () => {
     try {
@@ -82,8 +92,11 @@ const Navbar = () => {
                 <Avatar className="cursor-pointer">
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
-                    alt="@shadcn"
+                    alt={user?.fullname || "User"}
                   />
+                  <AvatarFallback className="bg-[#6A38C2] text-white font-medium">
+                    {getUserInitials()}
+                  </AvatarFallback>
                 </Avatar>
               </PopoverTrigger>
               <PopoverContent className="w-80">
@@ -92,8 +105,11 @@ const Navbar = () => {
                     <Avatar className="cursor-pointer">
                       <AvatarImage
                         src={user?.profile?.profilePhoto}
-                        alt="@shadcn"
+                        alt={user?.fullname || "User"}
                       />
+                      <AvatarFallback className="bg-[#6A38C2] text-white font-medium">
+                        {getUserInitials()}
+                      </AvatarFallback>
                     </Avatar>
                     <div>
                       <h4 className="font-medium">{user?.fullname}</h4>
