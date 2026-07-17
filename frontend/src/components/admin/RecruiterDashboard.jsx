@@ -52,7 +52,7 @@ const AnimatedCounter = ({ target, duration = 1400, prefix = "", suffix = "" }) 
 // ─── Stat Card ────────────────────────────────────────────────────────────────
 const StatCard = ({ icon: Icon, label, value, gradient, subtext, prefix = "", suffix = "" }) => (
   <div
-    className="relative overflow-hidden rounded-2xl p-6 text-white shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-default"
+    className="relative overflow-hidden rounded-2xl p-4 md:p-6 text-white shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-default"
     style={{ background: gradient }}
   >
     {/* Decorative shapes */}
@@ -62,8 +62,8 @@ const StatCard = ({ icon: Icon, label, value, gradient, subtext, prefix = "", su
 
     <div className="relative z-10 flex items-start justify-between">
       <div>
-        <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-2">{label}</p>
-        <p className="text-4xl font-black tracking-tight">
+        <p className="text-white/70 text-[10px] md:text-xs font-semibold uppercase tracking-widest mb-2">{label}</p>
+        <p className="text-2xl md:text-4xl font-black tracking-tight">
           <AnimatedCounter target={value} prefix={prefix} suffix={suffix} />
         </p>
         <p className="text-white/55 text-xs mt-2 font-medium">{subtext}</p>
@@ -280,7 +280,7 @@ const RecruiterDashboard = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-10">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             {/* Left: Greeting */}
             <div>
@@ -288,7 +288,7 @@ const RecruiterDashboard = () => {
                 <LayoutDashboard className="w-3.5 h-3.5 text-yellow-300" />
                 Recruiter Command Center
               </div>
-              <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight">
                 {greeting},{" "}
                 <span
                   className="text-transparent bg-clip-text"
@@ -335,7 +335,7 @@ const RecruiterDashboard = () => {
       </div>
 
       {/* ── Main Content ──────────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 -mt-5 pb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-5 pb-16">
 
         {/* ── Stat Cards ──────────────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
@@ -381,7 +381,7 @@ const RecruiterDashboard = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden h-full">
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-50">
+              <div className="flex items-center justify-between px-4 md:px-6 py-4 md:py-5 border-b border-gray-50">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-purple-50 rounded-xl">
                     <Briefcase className="w-5 h-5 text-[#6A38C2]" />
@@ -407,15 +407,15 @@ const RecruiterDashboard = () => {
                     return (
                       <div
                         key={job._id}
-                        className="flex items-center justify-between px-6 py-4 hover:bg-gray-50/70 transition-colors group"
+                        className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 hover:bg-gray-50/70 transition-colors group"
                       >
                         {/* Rank */}
-                        <span className="text-xs text-gray-300 font-bold w-5 mr-3 flex-shrink-0">
+                        <span className="text-xs text-gray-300 font-bold w-5 mr-2 md:mr-3 flex-shrink-0 hidden sm:block">
                           {String(i + 1).padStart(2, "0")}
                         </span>
 
                         {/* Logo */}
-                        <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center mr-4">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center mr-3 md:mr-4">
                           {job.company?.logo ? (
                             <img src={job.company.logo} alt={job.company?.name} className="w-full h-full object-cover" />
                           ) : (
@@ -457,7 +457,7 @@ const RecruiterDashboard = () => {
                         </div>
 
                         {/* App count */}
-                        <div className="flex items-center gap-3 ml-4 flex-shrink-0">
+                        <div className="flex items-center gap-2 md:gap-3 ml-2 md:ml-4 flex-shrink-0">
                           <div className="text-right">
                             <p className="text-base font-black text-gray-900">{appCount}</p>
                             <p className="text-[10px] text-gray-400 font-medium">applied</p>
@@ -641,7 +641,7 @@ const RecruiterDashboard = () => {
                   )}
 
                   <Link to={`/admin/companies/${company._id}`}>
-                    <button className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-500 hover:border-[#6A38C2] hover:text-[#6A38C2] hover:bg-purple-50 transition-all">
+                    <button className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-500 hover:border-[#6A38C2] hover:text-[#6A38C2] hover:bg-purple-50 transition-all min-h-[44px]">
                       <Edit3 className="w-3.5 h-3.5" />
                       Edit Company
                     </button>
@@ -666,26 +666,26 @@ const RecruiterDashboard = () => {
 
         {/* ── Empty State ─────────────────────────────────────────────────────── */}
         {!hasData && (
-          <div className="bg-white rounded-2xl border-2 border-dashed border-gray-200 p-16 text-center">
+          <div className="bg-white rounded-2xl border-2 border-dashed border-gray-200 p-8 md:p-16 text-center">
             <div
               className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
               style={{ background: "linear-gradient(135deg, #ede9fe, #dbeafe)" }}
             >
               <Zap className="w-10 h-10 text-[#6A38C2]" />
             </div>
-            <h3 className="text-xl font-black text-gray-900 mb-2">Welcome to your Recruiter Dashboard!</h3>
+            <h3 className="text-lg md:text-xl font-black text-gray-900 mb-2">Welcome to your Recruiter Dashboard!</h3>
             <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
               Start your recruitment journey by registering your company and posting your first job listing.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Link to="/admin/companies/create">
-                <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-200 active:scale-95">
+                <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-5 md:px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-200 active:scale-95 min-h-[44px]">
                   <Building2 className="w-4 h-4" />
                   Register Company
                 </button>
               </Link>
               <Link to="/admin/jobs/create">
-                <button className="flex items-center gap-2 bg-[#6A38C2] hover:bg-[#5b30a6] text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-lg shadow-purple-200 active:scale-95">
+                <button className="flex items-center gap-2 bg-[#6A38C2] hover:bg-[#5b30a6] text-white font-bold text-sm px-5 md:px-6 py-3 rounded-xl transition-all shadow-lg shadow-purple-200 active:scale-95 min-h-[44px]">
                   <Briefcase className="w-4 h-4" />
                   Post First Job
                 </button>

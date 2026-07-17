@@ -204,7 +204,7 @@ const PostJob = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-screen my-5">
+    <div className="flex items-center justify-center w-full my-5 px-4 md:px-6">
       <div className="w-full max-w-4xl">
         <div className="flex items-center gap-4 mb-5">
           <Button
@@ -220,9 +220,9 @@ const PostJob = () => {
         </div>
         <form
           onSubmit={submitHandler}
-          className="p-8 border border-gray-200 shadow-lg rounded-md"
+          className="p-4 sm:p-6 md:p-8 border border-gray-200 shadow-lg rounded-md"
         >
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div>
               <Label>Title</Label>
               <Input
@@ -309,7 +309,7 @@ const PostJob = () => {
               <Label>Company</Label>
               {companies.length > 0 && (
                 <Select onValueChange={selectChangeHandler}>
-                  <SelectTrigger className="w-[180px]">
+                  <SelectTrigger className="w-full sm:w-[180px]">
                     <SelectValue placeholder="Select a Company" />
                   </SelectTrigger>
                   <SelectContent>

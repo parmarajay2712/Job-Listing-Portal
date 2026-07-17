@@ -9,11 +9,11 @@ import useGetAllJobs from "@/hooks/useGetAllJobs";
 const NoJobsFound = () => {
   return (
     <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
-      <div className="relative mb-8">
+      <div className="relative mb-6 md:mb-8">
         {/* Animated search icon */}
-        <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center animate-pulse">
+        <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center animate-pulse">
           <svg
-            className="w-16 h-16 text-white animate-bounce"
+            className="w-10 h-10 md:w-16 md:h-16 text-white animate-bounce"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -31,10 +31,10 @@ const NoJobsFound = () => {
         <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-indigo-300 rounded-full animate-float-delayed opacity-60"></div>
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-800 mb-4 animate-slide-up">
+      <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-4 animate-slide-up">
         No Jobs Found
       </h2>
-      <p className="text-gray-600 text-center max-w-md mb-8 animate-slide-up-delayed">
+      <p className="text-gray-600 text-center max-w-md mb-8 animate-slide-up-delayed text-sm md:text-base px-4">
         We couldn't find any jobs matching your criteria. Try adjusting your
         filters or search terms.
       </p>
@@ -58,14 +58,14 @@ const Browse = () => {
     };
   }, []);
   return (
-    <div className="max-w-7xl mx-auto my-10">
+    <div className="max-w-7xl mx-auto my-10 px-4 md:px-6">
       <h1 className="font-bold text-xl my-10">
         Search Results ({allJobs.length})
       </h1>
       {allJobs.length === 0 ? (
         <NoJobsFound />
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {allJobs.map((job) => {
             return <Job key={job._id} job={job} />;
           })}

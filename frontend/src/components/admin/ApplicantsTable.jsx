@@ -119,7 +119,7 @@ const ApplicantsTable = () => {
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-x-auto">
       <Table>
         <TableCaption className="pb-4 text-gray-400 text-xs">
           {applications.length} applicant{applications.length !== 1 ? "s" : ""}{" "}

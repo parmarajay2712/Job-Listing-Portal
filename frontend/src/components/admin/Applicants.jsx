@@ -56,7 +56,7 @@ const Applicants = () => {
             }}
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
           <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium mb-4 transition-colors"
@@ -64,13 +64,13 @@ const Applicants = () => {
             <ArrowLeft className="w-4 h-4" />
             Back
           </button>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-black text-white">
+                <h1 className="text-xl md:text-2xl font-black text-white">
                   Applicants
                 </h1>
                 <p className="text-white/50 text-sm mt-0.5">
@@ -91,7 +91,7 @@ const Applicants = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 -mt-4 pb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-4 pb-16">
         {loading ? (
           <div className="flex items-center justify-center py-24">
             <div className="relative w-12 h-12">

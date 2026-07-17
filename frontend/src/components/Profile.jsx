@@ -18,14 +18,14 @@ const Profile = () => {
 
     return (
         <>
-            <div className='max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8'>
-                <div className='flex justify-between'>
-                    <div className='flex items-center gap-4'>
+            <div className='max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-4 sm:p-6 md:p-8'>
+                <div className='flex flex-col sm:flex-row justify-between gap-4'>
+                    <div className='flex flex-col sm:flex-row items-center sm:items-start gap-4'>
                         <Avatar className="h-24 w-24">
                             <AvatarImage src="https://www.shutterstock.com/image-vector/circle-line-simple-design-logo-600nw-2174926871.jpg" alt="profile" />
                         </Avatar>
-                        <div>
-                            <h1 className='font-medium text-xl'>{user?.fullname}</h1>
+                        <div className='text-center sm:text-left'>
+                            <h1 className='font-medium text-lg md:text-xl'>{user?.fullname}</h1>
                             <p>{user?.profile?.bio}</p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ const Profile = () => {
                 </div>
                 <div className='my-5'>
                     <h1>Skills</h1>
-                    <div className='flex items-center gap-1'>
+                    <div className='flex flex-wrap items-center gap-1'>
                         {
                             user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => <Badge key={index}>{item}</Badge>) : <span>NA</span>
                         }
@@ -58,7 +58,7 @@ const Profile = () => {
                     }
                 </div>
             </div>
-            <div className='max-w-4xl mx-auto bg-white rounded-2xl'>
+            <div className='max-w-4xl mx-auto bg-white rounded-2xl px-4 md:px-0'>
                 <h1 className='font-bold text-lg my-5'>Applied Jobs</h1>
                 {/* Applied Job Table   */}
                 <AppliedJobTable />

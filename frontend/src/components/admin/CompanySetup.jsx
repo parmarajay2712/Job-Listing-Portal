@@ -74,16 +74,16 @@ const CompanySetup = () => {
     },[singleCompany]);
 
     return (
-        <div className='max-w-xl mx-auto my-10'>
+        <div className='max-w-xl mx-auto my-5 md:my-10 px-4 md:px-6'>
             <form onSubmit={submitHandler}>
-                <div className='flex items-center gap-5 p-8'>
+                <div className='flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-5 p-4 md:p-8'>
                     <Button onClick={() => navigate("/admin/companies")} variant="outline" className="flex items-center gap-2 text-gray-500 font-semibold">
                         <ArrowLeft />
                         <span>Back</span>
                     </Button>
                     <h1 className='font-bold text-xl'>Company Setup</h1>
                 </div>
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                     <div>
                         <Label>Company Name</Label>
                         <Input

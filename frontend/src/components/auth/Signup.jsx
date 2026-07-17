@@ -75,9 +75,9 @@ const Signup = () => {
     },[])
     return (
         <div className='flex items-center justify-center min-h-screen px-4 bg-background'>
-            <form onSubmit={submitHandler} className='w-full max-w-md space-y-6 bg-card border border-border rounded-xl shadow-sm p-8'>
+            <form onSubmit={submitHandler} className='w-full max-w-md space-y-6 bg-card border border-border rounded-xl shadow-sm p-5 sm:p-8'>
                 <div className='space-y-2 text-center'>
-                    <h1 className='text-3xl font-bold tracking-tight'>Create Account</h1>
+                    <h1 className='text-2xl sm:text-3xl font-bold tracking-tight'>Create Account</h1>
                     <p className='text-sm text-muted-foreground'>Enter your details to get started</p>
                 </div>
 
@@ -180,7 +180,7 @@ const Signup = () => {
 
                 <Button 
                     type="submit" 
-                    className="w-full h-10" 
+                    className="w-full h-10 min-h-[44px]" 
                     disabled={loading}
                 >
                     {loading ? (
